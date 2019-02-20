@@ -34,7 +34,7 @@ import android.widget.Toast;
 public class CameraActivity extends Activity implements OnClickListener,
         SurfaceHolder.Callback {
 
-    private static final String TAG = CameraActivity.class.getSimpleName();
+    private static final String TAG = "zzc";
     private static final int MEDIA_TYPE_IMAGE = 1;
     private Button switchCameraBtn, captureBtn;
     private SurfaceView surfaceSv;
@@ -137,9 +137,10 @@ public class CameraActivity extends Activity implements OnClickListener,
             case R.id.id_switch_camera_btn:
 
                 // 获取当前系统时间
-                Date date1 = new Date(System.currentTimeMillis());
-                String s1 = HelperClass.getDateFormatToString(date1);
-                Log.d(TAG,"开始时间:"+s1);
+//                Date date1 = new Date(System.currentTimeMillis());
+//                String s1 = HelperClass.getDateFormatToString(date1);
+                long times = System.currentTimeMillis();
+//                Log.d(TAG,"开始时间:"+s1);
                 // 切换前后摄像头
                 int cameraCount = 0;
                 CameraInfo cameraInfo = new CameraInfo();
@@ -176,11 +177,11 @@ public class CameraActivity extends Activity implements OnClickListener,
                     }
 
                 }
-                Date date2 = new Date(System.currentTimeMillis());
-                String s2 = HelperClass.getDateFormatToString(date2);
-                Log.d(TAG,"结束时间:"+s2);
-                double sub = HelperClass.getDateStringToDouble(s2) - HelperClass.getDateStringToDouble(s1);
-                Log.d(TAG,"时间差："+ sub +"ms");
+//                Date date2 = new Date(System.currentTimeMillis());
+//                String s2 = HelperClass.getDateFormatToString(date2);
+//                Log.d(TAG,"结束时间:"+s2);
+//                double sub = HelperClass.getDateStringToDouble(s2) - HelperClass.getDateStringToDouble(s1);
+                Log.d(TAG, "时间差：" + (System.currentTimeMillis() - times));
                 break;
             case R.id.id_capture_btn:
                 // 拍照,设置相关参数
